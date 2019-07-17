@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css';
 import Quiz from './components/Quiz';
+
 function App() {
   return (
     <div>
@@ -9,7 +10,7 @@ function App() {
           <a className="navbar-brand" href="/">react-quizzer</a>
       </nav>
       <main role="main" className="container">
-        <div className="starter-template">
+        <div>
           <Quiz />
         </div>
       </main>

@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactCardFlip from 'react-card-flip';
-
+import '../quiz.css';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 class QuizCard extends React.Component {
     static propTypes = {
-        questionNum: PropTypes.number
+        questionNum: PropTypes.number,
+        question: PropTypes.string,
+        answer: PropTypes.string
     };
     
     constructor() {
@@ -23,30 +25,23 @@ class QuizCard extends React.Component {
     
       render() {
         return (
-          <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical" infinite>
-            <div className="card" key="front">
-                <div className="card-header">
-                    Question # {this.props.questionNum}
-                </div>
-                <div className="card-body">
-                    <h5 className="card-title">Special title treatment</h5>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <button onClick={this.handleClick}>Click to flip</button>
-                </div>
-            </div>
-            <div className="card" key="back">
-                <div className="card-header">
-                   Answer
-                </div>
-                <div className="card-body">
-                    <p className="card-text">answer</p>
-                    <button onClick={this.handleClick}>Click to flip</button>
+            <div className="flip-card">
+                <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                        <h2 className="header">Question # {this.props.questionNum}</h2>
+                        <p>
+                            <ReactMarkdown source={this.props.question} />
+                        </p>
+                    </div>
+                    <div className="flip-card-back">
+                        <h2 className="header">Answer</h2>
+                        <p>
+                            <ReactMarkdown source={this.props.answer} />
+                        </p>
+                    </div>
                 </div>
             </div>
-
-          </ReactCardFlip>
         )
-      }
+    }
 }
-
 export default QuizCard;
