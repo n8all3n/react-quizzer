@@ -1,7 +1,8 @@
 import React from 'react';
 
 import './App.css';
-import Quiz from './components/Quiz';
+//import Quiz from './components/Quiz';
+import CreateQuiz from './components/CreateQuiz';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       </nav>
       <main role="main" className="container">
         <div>
-          <Quiz />
+          <CreateQuiz />
+ 
         </div>
       </main>
     </div>

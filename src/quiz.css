@@ -25,13 +25,14 @@
     backface-visibility: hidden;
   }
   
-  .flip-card-front {
-    text-align: center;
+  .flip-card-back, .flip-card-front {
+    padding-left: .5em;
+    padding-right: .5em;
   }
   
   .flip-card-back {
     transform: rotateY(180deg);
-    text-align: center;
+    overflow-y: auto;
   }
 
   .control-container {
@@ -45,4 +46,9 @@
 
   .next-button {
     float: right;
+  }
+
+  .rendered {
+    height: 10em;
+    overflow-y: auto;
   }

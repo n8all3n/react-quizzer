@@ -7,12 +7,12 @@ class Quiz extends React.Component {
         quiz: PropTypes.object
     };
 
-    constructor() {
+    constructor(props) {
         super();
         
         this.state = {
             currQuestion: 1,
-            questions: quizJSON.questions
+            questions: props.quiz ? props.quiz : quizJSON.questions
         };
     }
 
